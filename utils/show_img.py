@@ -10,6 +10,14 @@ def init_display(title):
     fig.patch.set_facecolor('silver')
 
 
+def show_single_channel(img, title, pos, m, n):
+    print(f"m={m}n={n}pos={pos}")
+    _ = plt.subplot(m, n, pos)
+    plt.imshow(img)
+    plt.title(title)
+    plt.axis('off')
+
+
 def show_img_with_matplotlib(color_img, title, pos, m, n):
     # Convert BGR image to RGB
     img_rgb = color_img[:, :, ::-1]
