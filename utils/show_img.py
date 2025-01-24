@@ -39,3 +39,13 @@ def thresholding_and_show(threshold_arr: MutableSequence, image, show_img, max_v
 
     # Show the Figure:
     plt.show()
+
+
+def show_hist_with_matplotlib_gray(hist, title, pos, color, m, n, t=-1):
+    ax = plt.subplot(m, n, pos)
+    plt.title(title)
+    plt.xlabel("bins")
+    plt.ylabel("number of pixels")
+    plt.xlim([0, 256])
+    plt.axvline(x=t, color='m', linestyle='--')
+    plt.plot(hist, color=color)
