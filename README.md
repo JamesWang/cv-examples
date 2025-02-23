@@ -14,6 +14,11 @@
     - Sobel
     - Scharr
 - LPF - Low-pass Filter: allow low frequency pass
+  - LPF will smoothen the pixel if the difference with the surrounding pixels 
+    is lower than a certain threshold.
+  - Used for:
+    - De-noising
+    - Blurring(i.e. Gaussian blur)
 
 ### Color models
 - Color model in computing are called **additive** models, they deal with lights
@@ -21,11 +26,13 @@
 
 ### Fourier transform
 - All waveforms are just the sum of simple sinusoids of different frequencies
-- NumPy has a **fast Fourier transform(FFT)
+- NumPy has a **fast Fourier transform(FFT)**
 - DFT - discrete Fourier transform
 
 ### Kernel
 - Kernels are square numerical metrics. can be used to blur or sharpen images
+  - Determine how each output pixel is calculated from a neighbourhood of input pixels.
+  - also called: **Convolution Matrix**
 - A kernel is a set of weights that are applied to a region in a source image to generate a single pixel in the destination image.
 - hdf = orig_img - blurred_image  (differential HPF)
   - obtaining an HPF by applying an LPF and calculating the difference between the original image
